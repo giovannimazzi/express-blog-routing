@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   res.json({
     message: "Dettagli del post " + req.params.id,
-    result: "",
+    result: posts.find((p) => p.id === parseInt(req.params.id)),
   });
 });
 
