@@ -46,7 +46,7 @@ router.patch("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   res.json({
     message: "Eliminazione del post " + req.params.id,
-    result: "",
+    result: posts.filter((p) => p.id !== parseInt(req.params.id)),
   });
 });
 
